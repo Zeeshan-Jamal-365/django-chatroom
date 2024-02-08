@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 
 <head>
@@ -7,8 +8,8 @@
     name="viewport"
     content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
-  <!-- <link rel="stylesheet"
-    type ='text/css' media ='screen' href="main.css"> -->
+  <link rel="stylesheet"
+    type='text/css' media='screen' href="{% static 'styles/main.css' %}">
 </head>
 
 <body>
@@ -17,11 +18,14 @@
   <ul class="messages">
     {% for message in messages %}
     <li>{{ message }}</li>
-      {% endfor %}
+    {% endfor %}
   </ul>
   {% endif %}
-  {% block content %}
 
+  <!-- <img src="{% static 'images/maldives.jpg' %}" /> -->
+
+  {% block content %}
+<!-- From here the home.html, login_register.html, profile.html, delete.html, room.html continues  -->
   {% endblock %}
 </body>
 
