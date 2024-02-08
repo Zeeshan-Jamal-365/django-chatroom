@@ -7,7 +7,12 @@
         <a href="{% url 'delete-room' room.id %}">Delete</a>
         {% endif %}
 
+        {% if room.host.id %}
         <a href="{% url 'user-profile' room.host.id %}">@{{room.host.username}}</a>
+        {% else %}
+        <!-- Handle the case where host.id is empty -->
+        <span>Host not available</span>
+        {% endif %}
         <h5>{{room.id}} --<a href="{% url 'room' room.id %}">{{room.name}}</a> </h5>
         <small>Technologies: {{room.topic.name}}</small>
         <!-- <p>{{room.description}}</p> -->
